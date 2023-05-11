@@ -1,0 +1,168 @@
+:root{
+    --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+}
+
+body{
+    background: url(./images/logo.svg) no-repeat;
+    background-position: 50% 15%;
+    background-color: var(--light-grayish-cyan);
+    font-size: 24px;
+}
+
+main{
+    height: 98vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    background-color: var(--white);
+    display: flex;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    gap: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.left-para{
+    color: var(--dark-grayish-cyan);
+    font-size: 16px;
+    margin-bottom: 0.6rem;
+}
+
+.left-input{
+    background: url(./images/icon-dollar.svg) no-repeat;
+    background-position: 7% 50%;
+    text-align: end;
+    border: 0;
+    background-color: var(--light-grayish-cyan);
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-size: 20px;
+    width: 100%;
+}
+
+.tip-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.top, .bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0.4rem;
+}
+
+.top > input, .bottom > input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.top > label, .bottom > label{
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+    display: inline-block;
+    width: 6.5rem;
+    text-align: center;
+    padding: 0.3rem 0;
+    border-radius: 6px;
+}
+
+.custom-amount{
+    background-color: var(--light-grayish-cyan);
+    border: 0;
+    border-radius: 6px;
+    max-width: 6.5rem;
+    height: 2.8rem;
+    margin-left: 0.5rem;
+    text-align: center;
+    font-size: 22px;
+}   
+
+.custom-amount::placeholder{
+    color: var(--dark-grayish-cyan)
+}
+
+.people-div > .left-input {
+    background: url(./images/icon-person.svg) no-repeat;
+    background-position: 7% 50%;
+    background-color: var(--light-grayish-cyan);
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--very-dark-cyan);
+    padding: 3rem;
+    border-radius: 16px;
+    gap: 6rem;
+}
+
+.calculate{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.tip-person, .total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.per-person > p{
+    color: var(--white);
+    font-size: 16px;
+}
+
+.per-person > .faded{
+    color: var(--grayish-cyan);
+    font-size: 12px;
+}
+
+.tip-person > span, .total > span{
+    color: var(--strong-cyan);
+    font-size: 46px;
+}
+
+.reset{
+    background-color: var(--strong-cyan);
+    border: 0;
+    border-radius: 6px;
+    padding: 0.5rem;
+    opacity: 0.2;
+    font-size: 18px;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
