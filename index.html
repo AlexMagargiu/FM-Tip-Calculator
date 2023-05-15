@@ -56,16 +56,24 @@
                 <input
                   type="text"
                   name="tip"
-                  id="custom"
                   placeholder="Custom"
                   class="custom-amount"
+                  onclick="removeCheckedState()"
                 />
               </div>
             </form>
           </div>
           <div class="people-div">
-            <p class="left-para">Number of People</p>
-            <input type="text" class="left-input" placeholder="0" />
+            <div class="para-div">
+              <p class="left-para">Number of People</p>
+              <p class="js-error-para">Can't be zero</p>
+            </div>
+            <input
+              type="text"
+              class="left-input js-error-input"
+              oninput="checkNumberOfPeople(value)"
+              placeholder="0"
+            />
           </div>
         </div>
         <div class="right">
