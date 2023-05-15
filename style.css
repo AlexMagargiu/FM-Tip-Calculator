@@ -62,7 +62,7 @@ main{
     width: 100%;
 }
 
-.left-input:focus {
+.left-input:focus, .custom-amount:focus {
     outline: 2px solid var(--strong-cyan);
     color: var(--very-dark-cyan);
 }
@@ -123,6 +123,19 @@ main{
     background-color: var(--light-grayish-cyan);
 }
 
+.para-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.js-error-para{
+    font-size: 16px;
+    margin-bottom: 0.6rem;
+    color: red;
+    visibility: hidden;
+}
+
 .right{
     display: flex;
     flex-direction: column;
@@ -167,6 +180,14 @@ main{
     padding: 0.5rem;
     opacity: 0.2;
     font-size: 18px;
+}
+
+.left-input:hover, .custom-amount:hover, input + label:hover, .reset:hover{
+    cursor: pointer;
+} 
+
+.reset:hover{
+    opacity: 1;
 }
 
 .attribution {
