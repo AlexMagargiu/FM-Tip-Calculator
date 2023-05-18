@@ -69,24 +69,20 @@ main{
 
 .tip-container{
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    max-width: 345px;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.top, .bottom{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 0.4rem;
-}
-
-.top > input, .bottom > input{
+.tip-container > input{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    display: none;
 }
 
-.top > label, .bottom > label{
+.tip-container > label{
     background-color: var(--very-dark-cyan);
     color: var(--white);
     display: inline-block;
@@ -96,21 +92,21 @@ main{
     border-radius: 6px;
 }
 
-.top > input:checked + label, .bottom > input:checked + label{
+.tip-container > input:checked + label{
     background-color: var(--strong-cyan);
     opacity: 0.6;
     color: var(--very-dark-cyan);
 }
 
-.custom-amount{
+.tip-container > .custom-amount{
     background-color: var(--light-grayish-cyan);
     border: 0;
     border-radius: 6px;
     max-width: 6.5rem;
     height: 2.8rem;
-    margin-left: 0.5rem;
     text-align: center;
     font-size: 22px;
+    display: inline-block;
 }   
 
 .custom-amount::placeholder{
