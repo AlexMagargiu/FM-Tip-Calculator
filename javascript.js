@@ -1,13 +1,12 @@
-function checkNumberOfPeople(value){
+function checkNumberOfPeople(){
     let errorInput = document.querySelector(".js-error-input"); 
-    const errorPara = document.querySelector(".js-error-para")
-    let regex = /\b0\b/;
-    if(regex.test(value)){
-        errorPara.style.visibility = "visible";
-        errorInput.style.outline = "2px solid red"
-    }else {
-        errorPara.style.visibility = "hidden";
-        errorInput.style.outline = "2px solid var(--strong-cyan)"
+    const errorPara = document.querySelector(".js-error-para");
+    if(errorInput.value === "0"){
+            errorPara.style.visibility = "visible";
+            errorInput.style.outline = "2px solid red"
+        }else {
+            errorPara.style.visibility = "hidden";
+            errorInput.style.outline = "2px solid var(--strong-cyan)"
     }
 }
 
@@ -16,6 +15,17 @@ function removeCheckedState() {
     for (let i = 0; i < radioInputs.length; i++) {
       radioInputs[i].checked = false;
     }
+}
+
+function checkState(){
+    let radioInputs = document.querySelectorAll('input[type="radio"]');
+    for (let i = 0; i < radioInputs.length; i++) {
+        if (radioInputs[i].checked) {
+            return true;
+       }else{
+       }
+    }
+    return false;
 }
 
 function removeCustomAmount(){
@@ -29,15 +39,21 @@ function calcTipAmountPerPerson(value){
     let customAmount = document.querySelector(".custom-amount");
     let outputTipPerPerson = document.querySelector(".js-tip-amount");
     let outputTotalPerPerson = document.querySelector(".js-total-amount");
-    if(billAmount.value !== "" && peopleAmount.value !== "0" && peopleAmount.value !== "" && value !== peopleAmount.value){
-        let calcTips;
-        if(customAmount.value === ""){
+    if(billAmount.value !== "" && peopleAmount.value !== "0" && peopleAmount.value !== ""){
+        let calcTips = 0;
+        if(customAmount.value === "" && checkState() === false){
+            outputTipPerPerson.innerHTML = "$0.00";
+            outputTotalPerPerson.innerHTML = ((((billAmount.value * 100) / peopleAmount.value) / 100)).toFixed(2);
+        }else if(customAmount.value === ""){
             calcTips = calcOutputTipPerPerson(billAmount.value, value, peopleAmount.value);
-        }else{
+        }else if(customAmount.value !== ""){
             calcTips = calcOutputTipPerPerson(billAmount.value, customAmount.value, peopleAmount.value)
         }
         outputTipPerPerson.innerHTML = calcTips.toFixed(2);
         outputTotalPerPerson.innerHTML = ((((billAmount.value * 100) / peopleAmount.value) / 100) + calcTips).toFixed(2);
+    }else{
+        outputTipPerPerson.innerHTML = "$0.00";
+        outputTotalPerPerson.innerHTML = "$0.00";
     } 
 }
 
