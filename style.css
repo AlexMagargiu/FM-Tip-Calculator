@@ -194,3 +194,58 @@ main{
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
+
+@media only screen and (max-width: 600px){
+    body{
+        background-position: 50% 6%;
+    }
+    
+    .card{
+        flex-direction:column;
+        width: 100%;
+        height: 110%;
+        margin-top: 20rem;
+    }
+
+    .left{
+        gap: 2rem;
+    }
+
+    .tip-container > label{
+        width: 47%;
+    }
+
+    .tip-container > .custom-amount{
+        max-width: 8.7rem;
+    }
+
+    .right{
+        height: 30%;
+        padding: 2rem 1.5rem;
+        gap: 1rem;
+    }
+
+    .calculate{
+        gap: 1rem;
+    }
+
+    .tip-person, .total{
+        gap: 1rem;
+    }
+
+    .per-person > p{
+        font-size: 14px;
+    }
+
+    .per-person > .faded{
+        font-size: 10px;
+    }
+
+    .tip-person > span, .total > span{
+        font-size: 24px;
+    }
+
+    .attribution {
+        display: none;
+    }
+}
